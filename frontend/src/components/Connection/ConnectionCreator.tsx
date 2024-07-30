@@ -136,7 +136,9 @@ const fileTypeLabel: { [K in Exclude<RadioValue, null | "database">]: string } =
 
 const ConnectionCreator = ({ name = null }: { name: string | null }) => {
   const [selectedRadio, setSelectedRadio] = useState<RadioValue>(null);
-  const [dsn, setDsn] = useState<string | null>(null);
+  const [dsn, setDsn] = useState<string | null>(
+    'mssql+pyodbc://LinuxSQL:R0b1nH00daNdFr13nds%40r3VeryMerrY@192.168.115.60:1433/Norman'
+  );
   const [file, setFile] = useState<File>();
   const { mutate: createConnection, isPending } = useCreateConnection();
   const { mutate: createFileConnection, isPending: isFilePending } =
