@@ -251,6 +251,7 @@ const ConnectionCreator = ({ name = null }: { name: string | null }) => {
               <Input
                 type="text"
                 placeholder="postgres://myuser:mypassword@localhost:5432/mydatabase"
+                value="mssql+pyodbc://LinuxSQL:R0b1nH00daNdFr13nds%40r3VeryMerrY@192.168.115.60:1433/Norman"
                 onChange={(e) => setDsn(e.target.value)}
               />
             </Field>
