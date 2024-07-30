@@ -47,7 +47,11 @@ class QueryGraphService:
     ) -> None:
         # Enable this try catch once we support errors with streaming responses
         try:
-            self.db = SQLDatabase.from_uri(dsn)
+            self.db = SQLDatabase.from_uri(dsn, 
+                view_support=True, 
+                schema="App", 
+                include_tables=["Users"]
+            ))
         except Exception as e:
             forward_connection_errors(e)
             raise e
